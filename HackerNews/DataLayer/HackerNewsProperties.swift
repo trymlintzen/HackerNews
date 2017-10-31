@@ -14,12 +14,14 @@ class HackerNewsProperties {
     var author: String
     var created_at_i : Int
     var story_url: String
+    var id: String
   
-    init(story_title: String, author: String, created_at_i: Int, story_url: String) {
+    init(story_title: String, author: String, created_at_i: Int, story_url: String, id: String) {
         self.story_title = story_title
         self.author = author
         self.created_at_i = created_at_i
         self.story_url = story_url
+        self.id = id
     }
     
 

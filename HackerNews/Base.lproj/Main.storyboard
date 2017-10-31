@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="122" y="202"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="Wnx-dT-HSF">
             <objects>
-                <viewController id="d0v-Wn-r9f" customClass="ViewController" customModule="HackerNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d0v-Wn-r9f" customClass="WebViewController" customModule="HackerNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RGr-tv-7TI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

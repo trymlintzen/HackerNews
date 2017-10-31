@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HackerNews/MainHackerTableViewController.swift"
-            timestampString = "531050470.804941"
+            timestampString = "531136273.164186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "notifyObservers(notification:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "refreshing(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HackerNews/MainHackerTableViewController.swift"
-            timestampString = "531050470.805425"
+            timestampString = "531136273.164271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "notifyObservers(notification:)"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "refreshing(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,45 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HackerNews/ViewController.swift"
-            timestampString = "531050470.805774"
+            timestampString = "531135274.049396"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "webViewDidStartLoad(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HackerNews.ViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "HackerNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Trymlintzen/Documents/The%20App%20Academy/Xcode-project/HackerNews/HackerNews/ViewController.swift"
-                  timestampString = "531044677.655981"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "182">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.String in HackerNews.ViewController.viewDidLoad() -&gt; ()"
-                  moduleName = "HackerNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Trymlintzen/Documents/The%20App%20Academy/Xcode-project/HackerNews/HackerNews/ViewController.swift"
-                  timestampString = "531044677.65856"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -89,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HackerNews/MainHackerTableViewController.swift"
-            timestampString = "531050470.805921"
+            filePath = "HackerNews/ViewController.swift"
+            timestampString = "531135274.049447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "convertToDate(epochTime:)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "webViewDidFinishLoad(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

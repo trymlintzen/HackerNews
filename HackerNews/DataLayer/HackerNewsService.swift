@@ -15,10 +15,10 @@ class HackerNewsService {
     private init() { // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
     }
     
-    func getTheHackerNews()  {
+    func getTheHackerNews(pages: Int)  {
         var hackerItems: [HackerNewsProperties] = []
         
-        Alamofire.request("https://hn.algolia.com/api/v1/search_by_date?query=ios",
+        Alamofire.request("https://hn.algolia.com/api/v1/search_by_date?query=ios?page=\(pages)",
                           method: .get,
                           parameters: nil,
                           encoding: JSONEncoding.default).responseJSON { (jsonData) in
@@ -31,11 +31,16 @@ class HackerNewsService {
                                                 let storyTitle = dict["story_title"] as? String,
                                                 let author = dict["author"] as? String,
                                                 let created_at_i = dict["created_at_i"] as? Int,
-                                                let story_url = dict["story_url"] as? String {
-                                                let hitObject = HackerNewsProperties.init(story_title: storyTitle, author: author, created_at_i: created_at_i, story_url: story_url)
+                                                let story_url = dict["story_url"] as? String,
+                                                let id = dict["objectID"] as? String {
+                                                let hitObject = HackerNewsProperties.init(story_title: storyTitle, author: author, created_at_i: created_at_i, story_url: story_url, id: id)
                                                     hackerItems.append(hitObject)
                                                 }
                                         }
+                                    }
+                                    
+                                    if let currentPage = result["page"] {
+                                        
                                     }
                                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: notificationIDs.hackerItemID),
                                                                       object: self,
@@ -43,7 +48,4 @@ class HackerNewsService {
                                 }
         }
     }
-    
-    
-    
 }

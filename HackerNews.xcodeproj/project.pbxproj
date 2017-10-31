@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6AAD05F744BC77DDFC28E63F /* Pods_HackerNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7923F4FD917B08523B1A2CAC /* Pods_HackerNews.framework */; };
 		814B84441FA33102006BE6A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B84431FA33102006BE6A0 /* AppDelegate.swift */; };
-		814B84461FA33102006BE6A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B84451FA33102006BE6A0 /* ViewController.swift */; };
+		814B84461FA33102006BE6A0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 814B84451FA33102006BE6A0 /* WebViewController.swift */; };
 		814B84491FA33103006BE6A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B84471FA33103006BE6A0 /* Main.storyboard */; };
 		814B844B1FA33103006BE6A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814B844A1FA33103006BE6A0 /* Assets.xcassets */; };
 		814B844E1FA33103006BE6A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814B844C1FA33103006BE6A0 /* LaunchScreen.storyboard */; };
@@ -21,6 +21,8 @@
 		8154554F1FA34ED8008F5CB3 /* shortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8154554D1FA34ED8008F5CB3 /* shortTableViewCell.swift */; };
 		815455501FA34ED8008F5CB3 /* shortTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8154554E1FA34ED8008F5CB3 /* shortTableViewCell.xib */; };
 		815455591FA354D4008F5CB3 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815455581FA354D4008F5CB3 /* constants.swift */; };
+		81679F741FA7458200235CA6 /* TimeIntervalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81679F731FA7458200235CA6 /* TimeIntervalExtension.swift */; };
+		81679F771FA878A100235CA6 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81679F761FA878A100235CA6 /* UIViewControllerExtension.swift */; };
 		B9B37EA0018FF882C534C73B /* Pods_HackerNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A12ACAE9E3BE7775B340E61 /* Pods_HackerNewsTests.framework */; };
 		F15D5683352F6FA5D55A8CAA /* Pods_HackerNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA27B1E9BC28E95CE30BBB5D /* Pods_HackerNewsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -52,7 +54,7 @@
 		7923F4FD917B08523B1A2CAC /* Pods_HackerNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackerNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		814B84401FA33102006BE6A0 /* HackerNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		814B84431FA33102006BE6A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		814B84451FA33102006BE6A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		814B84451FA33102006BE6A0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		814B84481FA33103006BE6A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814B844A1FA33103006BE6A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		814B844D1FA33103006BE6A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +71,8 @@
 		8154554D1FA34ED8008F5CB3 /* shortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shortTableViewCell.swift; sourceTree = "<group>"; };
 		8154554E1FA34ED8008F5CB3 /* shortTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = shortTableViewCell.xib; sourceTree = "<group>"; };
 		815455581FA354D4008F5CB3 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		81679F731FA7458200235CA6 /* TimeIntervalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalExtension.swift; sourceTree = "<group>"; };
+		81679F761FA878A100235CA6 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		BE82B4F0A317645927FE57E5 /* Pods-HackerNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackerNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-HackerNews/Pods-HackerNews.release.xcconfig"; sourceTree = "<group>"; };
 		FA27B1E9BC28E95CE30BBB5D /* Pods_HackerNewsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackerNewsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,6 +121,7 @@
 		814B84371FA33102006BE6A0 = {
 			isa = PBXGroup;
 			children = (
+				81679F751FA7458800235CA6 /* Extensions */,
 				815455571FA354C6008F5CB3 /* Constants */,
 				8154554A1FA34E6B008F5CB3 /* Cells */,
 				814B84421FA33102006BE6A0 /* HackerNews */,
@@ -143,13 +148,12 @@
 			children = (
 				814B84711FA33260006BE6A0 /* DataLayer */,
 				814B84431FA33102006BE6A0 /* AppDelegate.swift */,
-				814B84451FA33102006BE6A0 /* ViewController.swift */,
+				814B84451FA33102006BE6A0 /* WebViewController.swift */,
 				815455481FA34E01008F5CB3 /* MainHackerTableViewController.swift */,
 				814B84471FA33103006BE6A0 /* Main.storyboard */,
 				814B844A1FA33103006BE6A0 /* Assets.xcassets */,
 				814B844C1FA33103006BE6A0 /* LaunchScreen.storyboard */,
 				814B844F1FA33103006BE6A0 /* Info.plist */,
-				815455461FA34010008F5CB3 /* HackerNewsProperties.swift */,
 			);
 			path = HackerNews;
 			sourceTree = "<group>";
@@ -175,6 +179,7 @@
 		814B84711FA33260006BE6A0 /* DataLayer */ = {
 			isa = PBXGroup;
 			children = (
+				815455461FA34010008F5CB3 /* HackerNewsProperties.swift */,
 				814B84721FA3327D006BE6A0 /* HackerNewsService.swift */,
 			);
 			path = DataLayer;
@@ -195,6 +200,15 @@
 				815455581FA354D4008F5CB3 /* constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		81679F751FA7458800235CA6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				81679F731FA7458200235CA6 /* TimeIntervalExtension.swift */,
+				81679F761FA878A100235CA6 /* UIViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A7E14D43C3DFE5634AC25871 /* Frameworks */ = {
@@ -504,12 +518,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8154554F1FA34ED8008F5CB3 /* shortTableViewCell.swift in Sources */,
-				814B84461FA33102006BE6A0 /* ViewController.swift in Sources */,
+				814B84461FA33102006BE6A0 /* WebViewController.swift in Sources */,
 				815455471FA34010008F5CB3 /* HackerNewsProperties.swift in Sources */,
 				815455591FA354D4008F5CB3 /* constants.swift in Sources */,
 				815455491FA34E01008F5CB3 /* MainHackerTableViewController.swift in Sources */,
 				814B84441FA33102006BE6A0 /* AppDelegate.swift in Sources */,
+				81679F771FA878A100235CA6 /* UIViewControllerExtension.swift in Sources */,
 				814B84731FA3327D006BE6A0 /* HackerNewsService.swift in Sources */,
+				81679F741FA7458200235CA6 /* TimeIntervalExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

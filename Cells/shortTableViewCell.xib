@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="164.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="title" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsA-MR-ruJ">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="title" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsA-MR-ruJ">
                         <rect key="frame" x="23" y="14" width="275" height="80"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -35,7 +35,7 @@
                             <constraint firstAttribute="width" constant="275" id="Qoz-yk-Y3j"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>

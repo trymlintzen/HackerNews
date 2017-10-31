@@ -9,12 +9,12 @@
 import UIKit
 
 class MainHackerTableViewController: UITableViewController {
-
-//    @IBOutlet weak var collectionView: UICollectionView!
     
     var hackerItemsObjects: [HackerNewsProperties] = []
     var selectedHackerItem: HackerNewsProperties?
     var refresh: UIRefreshControl!
+    var currentPage = 0
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,17 +24,17 @@ class MainHackerTableViewController: UITableViewController {
                                                name: NSNotification.Name(rawValue: notificationIDs.hackerItemID),
                                                object: nil)
         
-        HackerNewsService.sharedInstance.getTheHackerNews()
+        
         let hackerNib = UINib(nibName: "shortTableViewCell", bundle: nil)
         self.tableView.register(hackerNib, forCellReuseIdentifier: TableCellIDs.shortTableViewCell)
-        
        
         refresh = UIRefreshControl()
         refresh.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refresh.addTarget(self, action: #selector(refreshing), for: .valueChanged)
         self.tableView.addSubview(refresh!)
+        HackerNewsService.sharedInstance.getTheHackerNews(pages: 0)
         
-        
+      
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -43,17 +43,29 @@ class MainHackerTableViewController: UITableViewController {
     }
 
     @objc func refreshing(_ sender: Any) {
-          HackerNewsService.sharedInstance.getTheHackerNews()
+        HackerNewsService.sharedInstance.getTheHackerNews(pages: 0)
+//        self.hackerItemsObjects = []
+
     }
     
-    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        print("************************************",indexPath.row ,"  " ,hackerItemsObjects.count, " current page: ", currentPage)
+        if indexPath.row == hackerItemsObjects.count - 1 {
+            currentPage = currentPage + 1
+            HackerNewsService.sharedInstance.getTheHackerNews(pages: currentPage)
+        }
+    }
+
     @objc func notifyObservers(notification: NSNotification) {
+
         var HackerItemDict = notification.userInfo as! Dictionary<String , [HackerNewsProperties]>
-        hackerItemsObjects = HackerItemDict[dictKey.hackerItemKey]!
+        hackerItemsObjects += HackerItemDict[dictKey.hackerItemKey]!
         self.tableView.reloadData()
+        
         refresh.endRefreshing()
     }
     
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -94,8 +106,9 @@ class MainHackerTableViewController: UITableViewController {
         var result = ""
         if differenceDate > 60 {
             let minutes = differenceDate.truncatingRemainder(dividingBy: 60)
-            result.append("\((differenceDate / 60).rounded())h \(minutes)mins")
-
+            let hours = String(format: "%.0f", (differenceDate / 60))
+            let mins = String(format: "%.0f", minutes)
+            result.append("\(hours)h \(mins)m")
         } else {
              let mins = String(format: "%.0f", differenceDate)
              result.append("\(mins)m")
@@ -115,10 +128,23 @@ class MainHackerTableViewController: UITableViewController {
         if segue.identifier == seguesIdentifiers.detailViewSegue {
             
             // Hier zeg je dus: Ga naar "detail(View/Table)Segue" als op een selectedShoppingItem wordt geklikt, want check regel 82
-            let detailView = segue.destination as! ViewController
+            let detailView = segue.destination as! WebViewController
             detailView.selectedHackerItem = self.selectedHackerItem
         }
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+        
+            hackerItemsObjects.remove(at: indexPath.row)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
+    }
+    
     
     /*
     // Override to support conditional editing of the table view.
