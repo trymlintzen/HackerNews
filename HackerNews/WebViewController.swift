@@ -7,42 +7,66 @@
 //
 
 import UIKit
+import WebKit
 
 
-class WebViewController: UIViewController, UIWebViewDelegate {
+class WebViewController: UIViewController, WKUIDelegate ,WKNavigationDelegate {
     
    
     var selectedHackerItem: HackerNewsProperties?
     var spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     var loadingView: UIView = UIView()
     
-    @IBOutlet weak var webViewOutlet: UIWebView!
+//    @IBOutlet weak var webViewOutlet: WKWebView!
     
+    var webView: WKWebView!
+    
+    override func loadView() {
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        webView.navigationDelegate = self
+        view = webView
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let storyURL =  selectedHackerItem?.story_url ?? ""
-        webViewOutlet.delegate = self
+//        webView.delegate = self
         print(storyURL)
         if let url = URL(string: storyURL) {
             let request = URLRequest.init(url: url)
-            webViewOutlet.loadRequest(request)
+//            webView.loadRequest(request)
+            webView.load(request)
         }
         
         
     }
 
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        self.showActivityIndicator(loadingView: loadingView, spinner: spinner)
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.hideActivityIndicator(loadingView: loadingView, spinner: spinner)
     }
     
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-          self.hideActivityIndicator(loadingView: loadingView, spinner: spinner)
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+         self.showActivityIndicator(loadingView: loadingView, spinner: spinner)
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+//    private func webViewDidStartLoad(_ webView: WKWebView) {
+//        self.showActivityIndicator(loadingView: loadingView, spinner: spinner)
+//    }
+//
+//    private func webViewDidFinishLoad(_ webView: WKWebView) {
+//          self.hideActivityIndicator(loadingView: loadingView, spinner: spinner)
+//    }
+    
+    
 
 
 //    func showActivityIndicator() {

@@ -11,23 +11,12 @@ import UIKit
 
 extension UIViewController {
     
-//    var spinner: UIActivityIndicatorView {
-//        get {
-//            return UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
-//        }
-//    }
-//    var loadingView: UIView {
-//        get {
-//            return UIView()
-//        }
-//    }
     func showActivityIndicator(loadingView: UIView, spinner: UIActivityIndicatorView) {
         
         DispatchQueue.main.async() {
             loadingView.frame = CGRect(x: 0.0, y: 0.0, width: 80.0, height: 80.0)
             loadingView.center = self.view.center
             loadingView.backgroundColor = UIColor.lightGray
-            //                UIColor(rgba: "#444444")
             loadingView.alpha = 0.7
             loadingView.clipsToBounds = true
             loadingView.layer.cornerRadius = 10

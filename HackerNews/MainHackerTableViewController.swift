@@ -8,13 +8,14 @@
 
 import UIKit
 
-class MainHackerTableViewController: UITableViewController {
+class MainHackerTableViewController: UITableViewController, UISearchBarDelegate {
     
     var hackerItemsObjects: [HackerNewsProperties] = []
     var selectedHackerItem: HackerNewsProperties?
     var refresh: UIRefreshControl!
     var currentPage = 0
-   
+    var currentQuery = "ios"
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class MainHackerTableViewController: UITableViewController {
         refresh.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refresh.addTarget(self, action: #selector(refreshing), for: .valueChanged)
         self.tableView.addSubview(refresh!)
-        HackerNewsService.sharedInstance.getTheHackerNews(pages: 0)
+        HackerNewsService.sharedInstance.getTheHackerNews(pages: 0, query: currentQuery)
         
       
         // Uncomment the following line to preserve selection between presentations
@@ -43,7 +44,7 @@ class MainHackerTableViewController: UITableViewController {
     }
 
     @objc func refreshing(_ sender: Any) {
-        HackerNewsService.sharedInstance.getTheHackerNews(pages: 0)
+        HackerNewsService.sharedInstance.getTheHackerNews(pages: 0, query: currentQuery)
 //        self.hackerItemsObjects = []
 
     }
@@ -52,7 +53,7 @@ class MainHackerTableViewController: UITableViewController {
         print("************************************",indexPath.row ,"  " ,hackerItemsObjects.count, " current page: ", currentPage)
         if indexPath.row == hackerItemsObjects.count - 1 {
             currentPage = currentPage + 1
-            HackerNewsService.sharedInstance.getTheHackerNews(pages: currentPage)
+            HackerNewsService.sharedInstance.getTheHackerNews(pages: currentPage, query: currentQuery)
         }
     }
 

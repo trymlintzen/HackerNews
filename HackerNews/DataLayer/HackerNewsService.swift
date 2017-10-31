@@ -15,10 +15,10 @@ class HackerNewsService {
     private init() { // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
     }
     
-    func getTheHackerNews(pages: Int)  {
+    func getTheHackerNews(pages: Int, query: String)  {
         var hackerItems: [HackerNewsProperties] = []
         
-        Alamofire.request("https://hn.algolia.com/api/v1/search_by_date?query=ios?page=\(pages)",
+        Alamofire.request("https://hn.algolia.com/api/v1/search_by_date?query=\(query)?page=\(pages)",
                           method: .get,
                           parameters: nil,
                           encoding: JSONEncoding.default).responseJSON { (jsonData) in
