@@ -23,11 +23,22 @@ extension MainHackerTableViewController: UISearchBarDelegate {
         
     }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        self.hackerItemsObjects = []
-        HackerNewsService.sharedInstance.getTheHackerNews(pages: 0, query: searchBar.text!.removeSpecialCharsFromString())
-        self.showActivityIndicator(loadingView: loadingView, spinner: spinner)
-    }
+    //    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    //
+    //    }
+    //
     
+    func isMoreThanTwoCharacter(_ searchBar: UISearchBar) -> Bool {
+        return (searchBar.text?.characters.count)! >= 4
+    }
+
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if isMoreThanTwoCharacter(searchBar) {
+            self.hackerItemsObjects = []
+            HackerNewsService.sharedInstance.getTheHackerNews(pages: 0, query: searchBar.text!.removeSpecialCharsFromString())
+            self.showActivityIndicator(loadingView: loadingView, spinner: spinner)
+        }
+    }
     
 }

@@ -20,7 +20,7 @@ class HackerNewsService {
     }
     
     func getTheHackerNews(pages: Int, query: String)  {
-       
+        
         do {
             let urlString =  "https://hn.algolia.com/api/v1/search_by_date?query=\(query)?page=\(pages)" 
             Alamofire.request( urlString ,
@@ -29,7 +29,6 @@ class HackerNewsService {
                                encoding: JSONEncoding.default).responseJSON { (jsonData) in
                                 print(jsonData)
                                 if let result = jsonData.result.value as? NSDictionary {
-                                    
                                     self.parseData(result: result)
                                 }
             }
@@ -46,7 +45,7 @@ class HackerNewsService {
                 if let dict = currentHit as? NSDictionary,
                     let storyTitle = dict["story_title"] as? String,
                     let author = dict["author"] as? String,
-                    let created_at_i = dict["created_at_i"] as? Int,
+                    let created_at_i = dict["created_at_i"] as? Double,
                     let story_url = dict["story_url"] as? String,
                     let id = dict["objectID"] as? String {
                     let hitObject = HackerNewsProperties.init(story_title: storyTitle, author: author, created_at_i: created_at_i, story_url: story_url, id: id)

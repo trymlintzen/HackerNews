@@ -36,7 +36,7 @@ extension MainHackerTableViewController: UITableViewDelegate, UITableViewDataSou
         
         cell.titleLabel.text = storeObject.story_title
         //        cell.created_atLabel.text = storeObject.created_at
-        cell.AuthorLabel.text = "\(storeObject.author) - \(convertToDate(epochTime: storeObject.created_at_i))"
+        cell.AuthorLabel.text = "\(storeObject.author) - \(storeObject.created_at_i.convertToDate())"
         
         
         return cell

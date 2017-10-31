@@ -21,9 +21,15 @@ class HackerNewsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    
+    
+    func testConvertToDateFromEpochTime() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let epochTime: Double = Date().timeIntervalSince1970 - 3600
+        var result = epochTime.convertToDate()
+        
+        XCTAssertEqual(result, "1h 0m")
     }
     
     func testPerformanceExample() {

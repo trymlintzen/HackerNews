@@ -70,26 +70,7 @@ class MainHackerTableViewController: UIViewController  {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func convertToDate(epochTime: Int) -> String{
         
-        let itemDate = TimeInterval(epochTime)
-        let currentSince1970 = Date().timeIntervalSince1970
-        //        let currentSince1970 = currentDate.timeIntervalSince1970
-        let differenceDate = ((currentSince1970 - itemDate) / 60)
-        var result = ""
-        if differenceDate > 60 {
-            let minutes = differenceDate.truncatingRemainder(dividingBy: 60)
-            let hours = String(format: "%.0f", (differenceDate / 60))
-            let mins = String(format: "%.0f", minutes)
-            result.append("\(hours)h \(mins)m")
-        } else {
-            let mins = String(format: "%.0f", differenceDate)
-            result.append("\(mins)m")
-        }
-        return String(result)
-    }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == seguesIdentifiers.detailViewSegue {
